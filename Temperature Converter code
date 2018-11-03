@@ -1,0 +1,46 @@
+import java.util.*;
+import java.io.*;
+public class FTC {
+	
+	 public static void main(String[] args) {
+	float temperature;
+	temperature = 0;
+    Scanner in = new Scanner(System.in);
+    
+    
+  boolean state = true;
+	while(state != false) {
+    		
+    System.out.println("Enter temperature");
+    try {
+    	//String value= in.nextLine();
+    temperature = Float.parseFloat(in.nextLine());
+    	state = false;
+    }
+    catch(Exception object) {System.out.println("Please enter a number!");
+    
+  state = true;
+    }
+    }
+	
+	boolean type = false;
+	while(type != true) {
+    System.out.println("Is the temperature you entered in Farenheit or Celcius");
+    String choice = in.nextLine();
+    if(choice.equalsIgnoreCase("F")) {
+    	temperature = ((temperature - 32)*5)/9;
+    	System.out.println("temperature in Celsius = " + temperature);
+    	type = true;
+    }
+    else if (choice.equalsIgnoreCase("C")) {
+    	temperature = (temperature * 9/5)+32;
+    	System.out.println("temperature in Farenheit = " + temperature);
+    	type = true;
+	}
+    else 
+    {
+    	System.out.println(" Please enter F/f or C/c");
+    }
+	 }
+}
+}
